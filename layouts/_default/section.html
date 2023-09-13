@@ -23,14 +23,13 @@
                 <div class="timeline">
                     <div class="circle">
                         <div class="item">
+                            <span class="item-date">
+                                {{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
+                            </span>
+                            &nbsp;&nbsp;
                             <a href="{{ .RelPermalink }}" class="item-link">
                                 {{- .Title -}}
                             </a>
-                        </div>
-                        <div class="item">
-                            <span class="item-date">
-                                Published&nbsp;on&nbsp;{{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
-                            </span>
                         </div>
                     </div>
                 </div>
