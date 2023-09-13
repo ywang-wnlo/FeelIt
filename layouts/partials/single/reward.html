@@ -1,0 +1,34 @@
+{{- $params := .Scratch.Get "params" -}} {{ if or .Params.reward (and
+.Site.Params.footer.reward.enable (ne .Params.reward false)) -}}
+<div class="reward-container">
+    {{ $Reward := .Site.Params.footer.reward}}
+    <div>{{ $Reward.comment | default "请我一杯咖啡吧！" }}</div>
+    <button>{{ $Reward.donate | default "赞赏" }}</button>
+    <div class="post-reward">
+        {{ if $Reward.wechatpay -}}
+        <div>
+            {{ $WechatpayName := $Reward.wechatpayname | default "微信" }}
+            <img src="{{ $Reward.wechatpay }}" alt="{{ $WechatpayName }}" />
+            <span>{{ $WechatpayName }}</span>
+        </div>
+        {{- end }} {{ if $Reward.alipay -}}
+        <div>
+            {{ $AlipayName := $Reward.alipayname | default "支付宝" }}
+            <img src="{{ $Reward.alipay }}" alt="{{ $AlipayName }}" />
+            <span>{{ $AlipayName }}</span>
+        </div>
+        {{- end }}
+    </div>
+</div>
+
+<script type="text/javascript">
+    function registerPostReward() {
+        const button = document.querySelector(".reward-container button");
+        if (!button) return;
+        button.addEventListener("click", () => {
+            document.querySelector(".post-reward").classList.toggle("active");
+        });
+    }
+    registerPostReward();
+</script>
+{{- end }}

@@ -2,3 +2,90 @@
 // Custom style
 // 自定义样式
 // ==============================
+
+// reward
+article .reward-container {
+    margin: 1em 0 0;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+
+    button {
+        margin: .5em;
+        background: transparent;
+        color: #fc6423;
+        cursor: pointer;
+        line-height: 2;
+        padding: 0 15px;
+        border: 2px solid #fc6423;
+        border-radius: 2px;
+        outline: 0;
+        transition: all 0.2s ease-in-out;
+        vertical-align: text-top;
+    }
+
+    button:hover {
+        color: #fefefe;
+        background-color: #fc6423;
+        transition: .5s
+    }
+
+    .post-reward {
+        display: none;
+        padding-top: 20px;
+
+        &.active {
+            display: block;
+        }
+
+        div {
+            display: inline-block;
+
+            span {
+            display: block;
+            }
+        }
+
+        img {
+            display: inline-block;
+            margin: .5em 2em 0;
+            max-width: 100%;
+            width: 180px;
+        }
+    }
+}
+
+// copyright
+article .post-copyright ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0.5em 1em;
+    position: relative;
+    border-left: 3px solid #ff2a2a;
+    margin: 1em 0 0;
+
+    background-color: rgba(#ddd, .2);
+
+    [theme=dark] & {
+        background-color: rgba(#666, .2);
+    }
+
+    a, a::before, a::after {
+        text-decoration: none;
+
+        color: $single-link-color;
+
+        [theme=dark] & {
+            color: $single-link-color-dark;
+        }
+    }
+
+    a:active,
+    a:hover {
+        color: $single-link-hover-color;
+
+        [theme=dark] & {
+            color: $single-link-hover-color-dark;
+        }
+    }
+}
