@@ -63,10 +63,10 @@
     {{- if .Section -}}
     <div class="post-nav">
         {{- if .PrevInSection -}}
-            <a href="{{ .PrevInSection.RelPermalink }}" class="prev" rel="prev" title="{{ .PrevInSection.Title }}"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="{{ .PrevInSection.RelPermalink }}" class="prev" rel="prev" title="{{ .PrevInSection.Title }}"><i class="fa-solid fa-angle-left fa-fw"></i>前一篇：{{ .PrevInSection.Title }}</a>
         {{- end -}}
         {{ if .NextInSection }}
-            <a href="{{ .NextInSection.RelPermalink }}" class="next" rel="next" title="{{ .NextInSection.Title }}">Next Post<i class="fa-solid fa-angle-right fa-fw"></i></a>
+            <a href="{{ .NextInSection.RelPermalink }}" class="next" rel="next" title="{{ .NextInSection.Title }}">后一篇：{{ .NextInSection.Title }}<i class="fa-solid fa-angle-right fa-fw"></i></a>
         {{- end -}}
     </div>
     {{- end -}}
