@@ -53,6 +53,15 @@
                             {{- dict "Categories" . | T "publishedInCategories" | safeHTML -}}
                         </span>
                     {{- end -}}
+                    {{- with .Params.tags -}}
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ T "tags" }}:&nbsp;
+                    {{- range $index, $value := . -}}
+                        <span>
+                        {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                        <a href="{{ $tag.RelPermalink }}"><i class="fa fa-tag fa-fw"></i>{{ $tag.Title }}</a>&nbsp;
+                        </span>
+                    {{- end -}}
+                    {{- end -}}
                 </div>
                 <div class="post-meta-line">
                     {{- with .Site.Params.dateformat | default "2006-01-02" | .PublishDate.Format -}}
