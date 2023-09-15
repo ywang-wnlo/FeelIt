@@ -79,9 +79,9 @@
                 {{- with .Site.Params.header.title.rss -}}
                 <a class="menu-item" href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a>
                 {{- end -}}
-                <a href="#" onclick="return false;" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <!-- <a href="#" onclick="return false;" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                     <i class="fa-solid fa-adjust fa-fw"></i>
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
@@ -154,9 +154,9 @@
                 <a href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a>
                 <span>&nbsp;|&nbsp;</span>
                 {{- end -}}
-                <a href="#" onclick="return false;" class="theme-switch" title="{{ T "switchTheme" }}">
+                <!-- <a href="#" onclick="return false;" class="theme-switch" title="{{ T "switchTheme" }}">
                     <i class="fa-solid fa-adjust fa-fw"></i>
-                </a>
+                </a> -->
             </div>
             {{- if .Site.IsMultiLingual -}}
                 <span class="menu-item language" title="{{ T "selectLanguage" }}">

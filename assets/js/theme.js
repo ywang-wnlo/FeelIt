@@ -80,17 +80,17 @@ class Theme {
         this.clickMaskEventSet.add(this._menuMobileOnClickMask);
     }
 
-    initSwitchTheme() {
-        this.util.forEach(document.getElementsByClassName('theme-switch'), $themeSwitch => {
-            $themeSwitch.addEventListener('click', () => {
-                if (document.body.getAttribute('theme') === 'dark') document.body.setAttribute('theme', 'light');
-                else document.body.setAttribute('theme', 'dark');
-                this.isDark = !this.isDark;
-                window.localStorage && localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
-                for (let event of this.switchThemeEventSet) event();
-            }, false);
-        });
-    }
+    // initSwitchTheme() {
+    //     this.util.forEach(document.getElementsByClassName('theme-switch'), $themeSwitch => {
+    //         $themeSwitch.addEventListener('click', () => {
+    //             if (document.body.getAttribute('theme') === 'dark') document.body.setAttribute('theme', 'light');
+    //             else document.body.setAttribute('theme', 'dark');
+    //             this.isDark = !this.isDark;
+    //             window.localStorage && localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+    //             for (let event of this.switchThemeEventSet) event();
+    //         }, false);
+    //     });
+    // }
 
     initSearch() {
         const searchConfig = this.config.search;
@@ -373,6 +373,7 @@ class Theme {
                 $chroma.insertBefore($header, $chroma.firstChild);
             }
         });
+        hljs.highlightAll();
     }
 
     initTable() {
@@ -712,7 +713,7 @@ class Theme {
             this.initSVGIcon();
             this.initTwemoji();
             this.initMenuMobile();
-            this.initSwitchTheme();
+            // this.initSwitchTheme();
             this.initSearch();
             this.initDetails();
             this.initLightGallery();
