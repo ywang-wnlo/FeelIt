@@ -1,6 +1,8 @@
 {{- $params := .Scratch.Get "params" -}}
 
 <div class="post-footer" id="post-footer">
+    {{- partial "single/related.html" . -}}
+
     {{- partial "single/reward.html" . -}}
 
     {{- partial "single/copyright.html" . -}}

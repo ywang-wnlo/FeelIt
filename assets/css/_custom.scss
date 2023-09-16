@@ -94,3 +94,54 @@ article .post-copyright ul {
 .utterances {
     max-width: 95%;
 }
+
+// related-posts
+article .related-posts {
+    border-top: 1px solid #f0f0f0;
+
+    ul {
+        a, a::before, a::after {
+            text-decoration: none;
+
+            color: $single-link-color;
+
+            [theme=dark] & {
+                color: $single-link-color-dark;
+            }
+        }
+
+        a:active,
+        a:hover {
+            color: $single-link-hover-color;
+
+            [theme=dark] & {
+                color: $single-link-hover-color-dark;
+            }
+        }
+
+        a.tag-same, a.tag-same::before, a.tag-same::after {
+            font-size: 0.9em;
+            opacity: 0.5;
+        }
+
+        a.tag-diff, a.tag-diff::before, a.tag-diff::after {
+            font-size: 0.8em;
+            opacity: 0.5;
+
+            color: $global-link-color;
+
+            [theme=dark] & {
+                color: $global-link-color-dark;
+            }
+        }
+
+        a.tag-diff:active,
+        a.tag-diff:hover {
+            color: $global-link-hover-color;
+
+            [theme=dark] & {
+                color: $global-link-hover-color-dark;
+            }
+        }
+    }
+}
